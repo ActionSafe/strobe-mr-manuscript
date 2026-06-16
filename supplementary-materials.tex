@@ -1,0 +1,44 @@
+\documentclass{article}
+\input{sections-supp/_preamble.tex}
+% NOTE: this is path to the aux file
+\externaldocument{main-manuscript}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% ==== Optional: Glossary ====
+% Uncomment to add a glossary defining key terms used in the manuscript.
+% \section{Glossary} \label{sec:glossary}
+% \input{sections-supp/00-glossary.tex}
+% \pagebreak
+
+% \section{Additional methodology details} \label{sec:supp-methods}
+% \input{sections-supp/10-methods.tex}
+% \pagebreak
+
+% \section{Additional results and analysis} \label{sec:supp-results}
+% \input{sections-supp/20-results.tex}
+% \pagebreak
+
+\section{Supplementary tables} \label{sec:supp-tables}
+\input{sections-supp/30-tables.tex}
+\pagebreak
+
+\section{Supplementary figures} \label{sec:supp-figures}
+\input{sections-supp/40-figures.tex}
+
+\pagebreak
+
+% ==== Optional: LLM declaration ====
+% Uncomment if your target journal requires disclosure of LLM usage (increasingly common).
+% \section{Declaration on the use of large language models} \label{sec:supp-use-of-llms}
+% \input{sections-supp/90-declaration-use-of-llms.tex}
+% \pagebreak
+
+% Bibliography
+\bibliography{bib}
+
+\end{document}

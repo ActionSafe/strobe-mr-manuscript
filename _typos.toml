@@ -1,0 +1,59 @@
+# typos configuration for LaTeX manuscript
+# https://github.com/crate-ci/typos
+
+[files]
+extend-exclude = [
+    # ---- Build artifacts ----
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.log",
+    "*.out",
+    "*.synctex.gz",
+    "*.toc",
+    "*.lof",
+    "*.lot",
+    # ---- External files ----
+    "assets/arxiv/",
+    "assets/texcount.pl",
+    "assets/latexpand",
+    # ---- Data files ----
+    # These contain extracted text from external sources
+    "*.json",
+    "assets/data/",
+    "assets/tables/",
+    "components/snippets/",
+    # ---- Bibliography ----
+    # BibTeX files contain titles from external sources with American spellings
+    "bib.bib",
+]
+
+[default]
+locale = "en-gb"
+
+extend-ignore-re = [
+    # ---- LaTeX commands ----
+    # Ignore \command{...} patterns
+    "\\\\[a-zA-Z]+\\{[^}]*\\}",
+    # Ignore \command[...]{...} patterns
+    "\\\\[a-zA-Z]+\\[[^\\]]*\\]\\{[^}]*\\}",
+    # ---- Citations and references ----
+    # Ignore \cite{...}, \ref{...}, \label{...}
+    "\\\\(cite|ref|label|eqref|pageref|autoref|cref|Cref)\\{[^}]*\\}",
+    # ---- BibTeX keys ----
+    # Ignore citation keys in bibliography
+    "@[a-zA-Z]+\\{[^,]+,",
+    # ---- URLs ----
+    "https?://[^\\s]+",
+    # ---- File paths ----
+    "[a-zA-Z0-9_/-]+\\.(tex|pdf|png|jpg|json|txt)",
+]
+
+[default.extend-words]
+# ---- Domain-specific terms ----
+# Add project-specific terms here
+# Example:
+# randomization = "randomization"
+# Randomization = "Randomization"

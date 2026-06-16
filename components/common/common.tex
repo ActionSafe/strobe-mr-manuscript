@@ -1,0 +1,18 @@
+% hide the text
+\providecommand\hide{}
+\renewcommand{\hide}[1]{}
+
+% mark things in TODO
+% Usage: \todo{message} or \todo[TAG]{message}
+% Default tag is TODO if not specified
+% Examples:
+%   \todo{Fix this section} -> TODO: Fix this section
+%   \todo[FIXME]{Revise argument} -> FIXME: Revise argument
+\usepackage[dvipsnames]{xcolor}
+\providecommand\todo{}
+\renewcommand{\todo}[2][TODO]{\colorbox{yellow}{\textcolor{red}{\textbf{#1:}} #2}}
+
+% Simple TODO marker without message
+% Usage: \TODO
+\providecommand\TODO{}
+\renewcommand{\TODO}{\colorbox{yellow}{\textcolor{red}{\textbf{TODO}}}}

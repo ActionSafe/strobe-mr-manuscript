@@ -1,0 +1,20 @@
+Third-party components bundled in this repository
+==================================================
+
+assets/arxiv/arxiv.sty
+  A LaTeX style file for arXiv preprint formatting.
+  No copyright header is present in the file.
+  License: unknown; included as-is for convenience.
+
+assets/texcount.pl
+  TeXcount version 3.2 (2020 Aug 04)
+  Author: Einar Andreas Rodland
+  Copyright 2008-2020 Einar Andreas Rodland
+  License: LaTeX Project Public License (LPPL)
+    https://www.latex-project.org/lppl.txt
+  Website: https://app.uio.no/ifi/texcount/
+
+assets/latexpand
+  Inspired by latexpand by D. Musliner, University of Michigan
+  Author: Matthieu Moy <git@matthieu-moy.fr> (2012-2023)
+  License: BSD License

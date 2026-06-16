@@ -1,0 +1,25 @@
+# LaTeX build files
+*.auto
+*.xdv
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Top level generated PDFs
+/*.pdf
+
+# Temporary files
+*~
+.DS_Store
+*.tmp

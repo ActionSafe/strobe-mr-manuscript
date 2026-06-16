@@ -1,0 +1,51 @@
+% Results section
+
+% \subsection{Primary findings}
+
+% [Primary results and findings]
+
+% % Demo table: descriptive statistics for the synthetic outcome measure.
+% % The component file wraps the raw tabular in assets/tables/ with a caption and label.
+% Table~\ref{tab:demo-descriptive} reports demo descriptive statistics across the four study conditions.
+% \input{components/tables/main-demo-descriptive.tex}
+
+% % Demo figure: matching visual summary.
+% % The component file wraps the figure asset in assets/figures/ with a caption and label.
+% Figure~\ref{fig:demo-colorbox} visualises the same per-condition means.
+% \input{components/figures/main-demo-colorbox.tex}
+
+% \subsection{Secondary analysis}
+
+% [Secondary results and analysis]
+
+
+Full texts of 13,434 articles published from 2005 to 2025 were collected from PubMed Central. 10,919 of them have supplementary files (3 files on average). After evaluation by LLM, 12,699 articles were found to be original MR researches and passed to STROBE-MR compliance assessment. Most of these (88.6\%) used two-sample designs, especially in recent years, as shown in Figure \ref{fig:study-design:year}. 
+\input{components/figures/fig-study-design-year.tex}
+
+\subsection{Model Evaluation}
+
+46 studies were included in the final evaluation set (4 studies were excluded because MR was not the main purpose or they did not have human participants). 36 studies were published after 2021 (when the STROBE-MR was first introduced), 10 of them (27.8\%) self-claimed to be compliant with STROBE-MR. No differences in the average number of items reported were found between studies with and without self-claimed compliance (both groups reported an average of 24 items). 
+
+The overall accuracy of the LLM in assessing STROBE-MR compliance was 89.0\%. The accuracy varied significantly for different sections and items: most of the difficult items that the LLM struggled with were in the Methods and Results sections (see Table \ref{tab:model:accuracy} for more information). 
+
+
+\subsection{General Results}
+
+On average, 22 of the 43 items of STROBE-MR were fully reported. The most frequently reported items were item 14: key results (99.3\%), item 1: title and abstract (98.5\%), item 16a: meaning of results (97.9\%), item 2: background (97.3\%), item 16c: clinical relavance (97.3\%), and item 8: sensitivity analysis (96.9\%). However, item 11c: translating to absolute risk (2.2\%), item 9b: registration of study (2.4\%), item 4b: paticipants (5.6\%), item 18: funding (6.3\%), and item 6c: details of MR estimator (8.7\%) were rarely reported among MR articles. Details can be found in Figure \ref{fig:meet:item}. When comparing number of items reported in different year, we found a slightly decreasing trend (Figure \ref{fig:meet:year}). The mean reporting number decreased from 25 items in 2007 to 21 items in 2025.
+\input{components/figures/fig-meet-item.tex}
+\input{components/figures/fig-meet-year.tex}
+
+\subsection{Reporting Trends in Different Sections}
+
+The reporting rate of STROBE-MR items varied significantly in different sections. As we can see from Figure \ref{fig:meet:section}, items in Title/Abstract and Introduction sections were reported by most of the articles, with reporting rate of 98.5\% and 95.8\%, respectively. However, the reporting rates decreased significantly in other sections: followed by Results (51.3\%), Discussion (48.0\%) and Methods (32.8\%). Other Information section had the lowest reporting rate of 21.2\%. Different temporal trends of reporting can also be observed in these sections (Figure \ref{fig:meet:section:year}). The reporting rates remained around 90\% in Title/Abstract and Introdution sections. Results section also had constant temporal trend but its reporting rate was only around 50\%. Methods, Discussion and Other Information sections all showed a decreasing trend, especially in recent years.
+\input{components/figures/fig-meet-section.tex}
+\input{components/figures/fig-meet-section-year.tex}
+
+\subsection{Sensitivity Analysis}
+
+Detailed results of the sensitivity analysis can be found in the Appendix. In general, the reporting rate of many items increased and the average number of items reported rose to 32. Figure \ref{append:fig:meet:year} shows there was a similar decreasing trend over time in the number of items reported. However, we observed significant changes in reporting rates of different items. The most frequently reported items were now item 4 (99.5\%), 14(99.3\%), 1(98.5\%), 16b(98.5\%) and 16a 98.0\%). The least reported items were item 11c(2.2\%), 9b(2.4\%), 10c(13.0\%), 6d(16.0\%), 10b(36.5\%). When comparing reporting rate in different sections, we observed a significant increase in the Methods (83.5\%), Discussion (94.8\%) and Other Information (86.7\%) sections. 
+These are the least reported sections in the main analysis. We did not observe any temporal trends in most sections, because the reporting rates remained constant over the years. However, the reporting rate of Other Information rose from around 60\% to over 80\% in recent years. 
+
+
+% Example cross-reference to supplementary materials
+% Additional results are presented in Section~\ref{sec:supp-results} and Table~\ref{tab:supp-detailed-results} of the supplementary materials.

@@ -1,0 +1,52 @@
+\usepackage{assets/arxiv/arxiv}
+% disable 'A Preprint' label
+\renewcommand{\headeright}{}
+\renewcommand{\undertitle}{}
+\usepackage{fontspec}
+% Use Source Sans Pro sans-serif font throughout
+\usepackage[default]{sourcesanspro}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\usepackage{lineno}
+\usepackage{hyperref}
+\linenumbers
+\usepackage{pdflscape}
+\usepackage{datetime2}
+\usepackage{xr}
+
+\title{Reporting Quality of Mendelian Randomization Studies Based on STROBE-MR: An Investigation Powered by Large Language Models}
+
+\usepackage{authblk}
+
+\author[1,*]{[Jiangjie Zhou]}
+\author[1,2,*]{[SECOND AUTHOR]}
+\affil[1]{
+  [DEPARTMENT/UNIT], [INSTITUTION],
+  [CITY],
+  [COUNTRY]}
+\affil[2]{
+  [SECOND AFFILIATION], [INSTITUTION],
+  [CITY],
+  [COUNTRY]}
+\affil[*]{Corresponding author: [EMAIL1], [EMAIL2]}
+
+% \usepackage{natbib}
+\bibliographystyle{unsrt}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{placeins}
+
+% Adjust float placement parameters for better positioning
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+
+\input{components/common/common.tex}

@@ -1,0 +1,43 @@
+\documentclass{article}
+\input{sections-main/_preamble.tex}
+% NOTE: this is path to the aux file
+\externaldocument{supplementary-materials}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\section{Abstract} \label{sec:abstract}
+\input{sections-main/00-abstract.tex}
+\pagebreak
+
+\section{Introduction} \label{sec:intro}
+\input{sections-main/10-intro.tex}
+\pagebreak
+
+\section{Methods} \label{sec:methods}
+\input{sections-main/20-methods.tex}
+\pagebreak
+
+\section{Results} \label{sec:results}
+\input{sections-main/30-results.tex}
+\pagebreak
+
+\section{Discussion} \label{sec:discussion}
+\input{sections-main/40-discussion.tex}
+\pagebreak
+
+\section{Conclusion} \label{sec:conclusion}
+\input{sections-main/50-conclusion.tex}
+
+% Acknowledgments, funding, etc.
+\input{sections-main/90-final.tex}
+
+\pagebreak
+
+% Bibliography
+\bibliography{bib}
+
+\end{document}

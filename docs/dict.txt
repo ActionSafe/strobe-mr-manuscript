@@ -1,0 +1,1 @@
+# Custom dictionary for textidote (one word per line).

@@ -2,19 +2,19 @@
 
 \textbf{Background:}
 
-Mendelian randomization (MR) has been widely used to investigate causal relationships between exposures and outcomes. However, concerns have also been raised about the reporting quality of MR studies. The STROBE-MR was developed to improve the reporting quality of MR studies, but assessments of STROBE-MR compliance are still limited and rely on manual review. With the rapid development of large language models (LLMs), it is now possible to use LLMs to automate the assessment of STROBE-MR compliance.
+Mendelian randomization (MR) has been widely used to investigate causal relationships between exposures and outcomes. However, concerns have also been raised about the reporting quality of MR studies. STROBE-MR was developed to improve reporting quality, but assessments of compliance remain limited and rely largely on manual review. With the rapid development of large language models (LLMs), it is now possible to automate STROBE-MR compliance assessment.
 
 \textbf{Methods:}
 
-We used OpenAI's GPT-5-mini model to assess 13,568 MR articles published between 2007 and 2025 for their compliance with the STROBE-MR guideline. Two reviewers independently evaluated the accuracy of the LLM's assessments on a random sample of 50 articles. 
+We used OpenAI's GPT-5-mini model for automated assessment of MR reporting quality. Model performance was evaluated on an annotated dataset of 50 MR articles. We applied the pipeline to more than 13,000 MR articles published between 2007 and 2025 to assess compliance with the STROBE-MR guideline and to explore reporting patterns across STROBE-MR items, sections, and time periods. A sensitivity analysis was conducted to assess the robustness of the results.
 
 \textbf{Results:}
 
-The LLM achieved an overall accuracy of 89.0\% in assessing STROBE-MR compliance. On average, 22 of the 43 subitems of STROBE-MR were reported, with substantial variation of reporting rates across different STROBE-MR items and sections. A decreasing trend of number of reported subitems was also observed especially in recent years. 
+The LLM achieved an overall accuracy of 89.0\% in assessing STROBE-MR compliance. On average, 22 of 43 items (51.2\%) were reported, with substantial variation in reporting rates across STROBE-MR items and sections. The least reported items were found in the "Methods", "Results", and "Other Information" sections. A decreasing trend in the number of reported items was also observed, especially in recent years. Sensitivity analysis showed a significant increase in the reporting rate of many items and a similar decreasing trend over time.
 
 \textbf{Conclusions:}
 
-This study demonstrates the potential use of LLMs in automating the assessment of reporting quality. Our findings suggest that the reporting quality of MR studies needs to be improved, and more efforts are required to promote the use of STROBE-MR.
+This study demonstrates the potential of LLMs to automate reporting quality assessment in MR studies. Our findings suggest that reporting quality still needs to be improved, and further efforts are required to promote the use of STROBE-MR.
 
 % Example cross-reference to supplementary materials
 % See Table~\ref{tab:supp-example} in supplementary materials for additional details.

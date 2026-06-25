@@ -8,29 +8,31 @@
 
 \subsection{Data collection}
 
-We used PubMed Central as our main data source. First, a database query was performed to retrieve PMCIDs for mendelian randomization studies. We used the following query for this purpose: 
+We used PubMed Central (PMC) as our main data source. First, a database query was performed to retrieve PMCIDs for mendelian randomization studies. We used the following query for this purpose: 
 
 "Mendelian Randomization Analysis"[Mesh] OR "Mendelian Randomi*ation"[Title/Abstract] 
 
 A total of 13,568 results were returned (2025-11-5).  A Python web crawler was used to download the corresponding htmls (including full texts of articles) and supplementary materials.  
 
-Then another Python script was used to extract information and format each article into a JSON object. Fields included in the JSON object are listed in Table \ref{tab:json}. All JSON objects were stored in MongoDB database. 
+Then another Python script was used to extract information and format each article into a JSON object. Fields included in the JSON object are listed in Table ~\ref{tab:json}. All JSON objects were stored in MongoDB database. 
 
-\input{assets/tables/tab_json_obj.tex}
 
-Supplementary materials can have different file types, to make it understandable by LLM, we used the following rules to extract texts from them:  
+
+Supplementary materials can have different file types, the support for non-text data by non-multimodal LLMs could be inadequate. To provide appropriate context to the model, we used the following rules to extract texts from them:  
 \begin{enumerate}
     \item If it is a figure (png, jpeg, svg, etc.): Extract its caption and description if available 
     \item If it is a document (pdf, doc, docx, txt, etc.): Extract all the texts included in the document. If figures are included in the document, follow rule 1. 
     \item If it is a data set (csv, tsv, xls, xlsx): Extract the first 10 rows of each table to limit the length of the LLM prompt. If the figures are included, follow rule 1. 
 \end{enumerate}
 
-\subsection{STROBE-MR}
+\subsection{STROBE-MR item decomposition}
 Some STROBE-MR items are compound questions that contain requirements for different types of information, for example, item 4(a): \textit{Setting: Describe the study design and the underlying population, if possible. 
-Describe the setting, locations, and relevant dates, including periods of recruitment, exposure, follow-up, and data collection, when available}. It can be difficult to decide whether one article has met the requirements of the compound item. To make our assessments more detailed, we divided the original 43 items into 80 smaller components that can be assessed independently. The definitions of the STROBE-MR components can be found in Table ~\ref{tab:def:component}. A mapping process was used to map components back to items.
+Describe the setting, locations, and relevant dates, including periods of recruitment, exposure, follow-up, and data collection, when available}. A MR article can sometimes only present part of these information, so some information can be lost if we only give a simple "yes" or "no" answer for this item. To prevent from such information lose, previous study\cite{gibson_reporting_2023} tried to code this item as "partially" reported. 
+
+In this study, to make our assessments more detailed, we tried to divide compound items into more granular components that can be assessed independently. For example, we can divide item 4(a) into components like study design, population, locations etc. We defined 80 components from the original 43 STROBE-MR items. The definitions of these components can be found in Table ~\ref{tab:def:component}. A mapping process (details can be found in the Evaluation section) was used to map components back to items.
 
 \subsection{Prompt Design and Assessment}
-GPT-5-mini model was used for the assessment. For each MR article, the main body of text, texts extracted from supplementary materials, and the STROBE-MR checklist were fed into the LLM as inputs. We then asked the LLM to determine the type of the article. Since STROBE-MR applies only to original research, we asked the LLM to ignore the article it was not an original research article (for example, a literature review). For original research articles, the LLM should decide whether the article described a one-sample or two-sample design. The LLM should then assess whether it has reported each STROBE-MR component and give reasons for that decision. The assessment output was converted into a list of JSON objects. Each JSON object contained 4 elements: 
+GPT-5-mini model was used for the assessment. For each MR article, the main body of text, texts extracted from supplementary materials, and the STROBE-MR checklist were fed into the LLM as inputs. We then prompted the LLM to determine the type of the article. Since STROBE-MR applies only to original research, we prompted the LLM to ignore the article it was not an original research article (for example, a literature review). For original research articles, the LLM should decide whether the article described a one-sample or two-sample design. The LLM should then assess whether it has reported each STROBE-MR component and give reasons for that decision. The assessment output was converted into a list of JSON objects. Each JSON object contained 4 elements: 
 \begin{itemize}
     \item index: the STROBE-MR component being assessed (numbered 1 to 80)
     \item status: 1 if the article reported information required by the component, 0 if it does not, 2 if this component is not applicable to the article (for example, components for two-sample MR are not applicable to one-sample designs)
@@ -38,13 +40,16 @@ GPT-5-mini model was used for the assessment. For each MR article, the main body
     \item relevant\_text: relevant text from the article to support the decision. 
 \end{itemize}
 
-We used OpenAI's Responses API\footnote{https://developers.openai.com/api/reference/resources/responses/methods/create} to generate structured JSON output (JSON schema using pydantic and other parameters are listed in Table ~\ref{tab:params:openai}). A complete prompt can be found in Table ~\ref{tab:prompt:openai}.
+We used OpenAI's Responses API\footnote{https://developers.openai.com/api/reference/resources/responses/methods/create} to generate structured JSON output (JSON schema using pydantic and other parameters are listed in Table ~\ref{tab:params:openai}). A complete prompt can be found in Table \ref{tab:prompt:openai}.
 
+\input{assets/tables/tab_prompt_openai.tex}
+
+The code is available at 
 \subsection{Evaluation}
 
-We randomly selected 50 articles as the evaluation set. Two reviewers (JZ, YW) independently assessed their compliance with the STROBE-MR checklist. If two reviewers disagreed with each other on one item, all authors discussed and resolved the disagreement. The LLM's accuracy was then calculated on the final evaluation set.
+We randomly selected 50 articles as the evaluation set. Two reviewers (JZ, XW) independently assessed their compliance with the STROBE-MR checklist. For each STROBE-MR component, the reviewer should answer with either "yes", "no" or "not applicable" (answers of "yes" were coded as 1, "no" as 0, and "not applicable" as 0). If two reviewers disagreed with each other on one component, all authors discussed and resolved the disagreement. The LLM's accuracy was then calculated on the final evaluation set.
 
-To summarize the STROBE-MR compliance across the whole data set, we calculated average percentage of articles that met STROBE-MR by section, item, and component, respectively. Components that were not applicable to the article were ignored in these calculations. In the primary analysis, the 80 smaller components were mapped to the 47 STROBE-MR items by requiring that all components of each item were reported for the item to be reported. In practice, authors of MR research could have different interpretations of the STROBE-MR items, and may believe that some components are not necessary. We therefore conducted a sensitivity analysis in which each item was considered as reported if any one of its components was reported, to explore how an alternative mapping strategy could influence the results.
+To summarize the STROBE-MR compliance across the whole data set, we calculated average percentage of articles that met STROBE-MR by section, item, and component, respectively. Components that were not applicable to the article were ignored in these calculations. In the primary analysis, the 80 smaller components were mapped to the 43 STROBE-MR items by requiring that all components of each item were reported for the item to be reported. In practice, authors of MR research could have different interpretations of the STROBE-MR items, and may believe that some components are not necessary. We therefore conducted a sensitivity analysis in which each item was considered as reported if any one of its components was reported, to explore how an alternative mapping strategy could influence the results.
 
 % Example cross-reference to supplementary materials
 % Detailed methodology is provided in Section~\ref{sec:supp-methods} of the supplementary materials.

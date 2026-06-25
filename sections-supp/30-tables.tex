@@ -151,52 +151,7 @@ class Assessment(BaseModel):
     \label{tab:params:openai}
 \end{table}
 
-\begin{table}
-    \caption{LLM prompt template for OpenAI platform}
-    \label{tab:prompt:openai}
-    \begin{tabular}{lp{12cm}}
-    \hline
-    Role & Prompt \\
-    \hline
-    System &
-    You are a highly skilled medical research assistant with extensive knowledge of mendelian randomization and STROBE guidelines.  Your task is to assess whether specific mendelian randomization articles meet the given STROBE criteria. For each criterion, you will analyze the article text and provide a detailed justification for your assessment. \\
-    User & 
-\begin{lstlisting}
-# Task: Your job is to assess whether the given article meets the specified STROBE criterion and provide justification for your assessment.   
-# Article: Below is the article text:  
-{text} 
-# Supplementary Materials: 
-{supp}  
-# Before proceeding to the assessment, decide whether the article is an original research article. If it is not (for example, a review or comment), respond with an empty list: [] 
-# STROBE-MR Criterion:  
-Format (CSV): 
-index: int-The index of STROBE-MR item being assessed. 
-section: str-The section of STROBE-MR item being assessed. 
-item: str-The specific STROBE-MR item being assessed. 
-note: str-Additional notes regarding the STROBE-MR item. 
-Whole STROBE-MR Checklist: 
-{strobe} 
-# Before start:
-Decide publication type of this article (i.e., original research, review, comment, etc.). If it is not an original research article, skip this article and leave other fields with empty list or string.
-If it is an original research article, decide its study design (e.g., two-sample MR, one-sample MR, multivariable MR, network MR, non-linear MR, etc.) and use this information to inform your assessment of the STROBE-MR criteria.
-
-# Assessment: Given the criterion items above, use the article text and supplementary materials to determine whether the article meets these criteria.
-Think step by step and justify your answer. Format your response as a JSON objects, Example JSON output:
-{{
-    pub_type: original research,
-    study_design: two-sample MR,
-    assessments: [{{ 
-        index: int-The index of STROBE-MR item being assessed.
-        rationale: str-Your reasoning as to why the article does or does not meet that criterion.
-        relevant_text: str-The specific text from the article that is relevant to assessing this criterion, empty string if no relevant text is found or not applicable.
-        status: int-1 if the article meets criterion, 0 if it does not, 2 if this item is not applicable to the article.
-    }}]
-}}
-\end{lstlisting}
-\\
-    \hline
-    \end{tabular}
-\end{table}
+\input{assets/tables/tab_json_obj.tex}
 
 
 \begin{longtable}{rllr}

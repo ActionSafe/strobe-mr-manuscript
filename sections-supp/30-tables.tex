@@ -1,34 +1,5 @@
 % Supplementary tables
 
-% \begin{table}[H]
-% \centering
-% \caption{Example supplementary table}
-% \label{tab:supp-example}
-% \begin{tabular}{lcc}
-% \hline
-% Parameter & Value & 95\% CI \\
-% \hline
-% Example 1 & 1.23 & (0.95-1.58) \\
-% Example 2 & 2.45 & (1.87-3.21) \\
-% \hline
-% \end{tabular}
-% \end{table}
-
-% \begin{table}[H]
-% \centering
-% \caption{Detailed results table}
-% \label{tab:supp-detailed-results}
-% \begin{tabular}{lccc}
-% \hline
-% Variable & Mean & SD & Range \\
-% \hline
-% Variable 1 & 45.2 & 12.3 & 18-78 \\
-% Variable 2 & 23.8 & 8.7 & 5-52 \\
-% \hline
-% \end{tabular}
-% \end{table}
-
-
 \begin{longtable}{lllp{10cm}}
 \caption{Definitions of STROBE-MR components}
 \label{tab:def:component} \\
@@ -153,104 +124,204 @@ class Assessment(BaseModel):
 
 \input{assets/tables/tab_json_obj.tex}
 
-
-\begin{longtable}{rllr}
-\caption{Model accuracy by component}
-\label{tab:model:accuracy} \\
+\begin{longtable}{rllllllll}
+\caption{Annotation summary by component}
+\label{tab:eval:component} \\
 
 \toprule
-Index & Section & Item & Accuracy,\% \\
+Index & Section & Item & Reported(JZ) & Not Reported(JZ) & Reported(YW) & Not Reported(YW) & Disagreement \\
 \midrule
 \endfirsthead
 
 \toprule
-Index & Section & Item & Accuracy,\% \\
+Index & Section & Item & Reported(JZ) & Not Reported(JZ) & Reported(YW) & Not Reported(YW) & Disagreement \\
 \midrule
 \endhead
 
 \bottomrule
 \endfoot
 
-1 & Title and Abstract & 1 & 100.000000 \\
-2 & Introduction & 2 & 100.000000 \\
-3 & Introduction & 3 & 91.304348 \\
-4 & Methods & 4 & 100.000000 \\
-5 & Methods & 4 & 100.000000 \\
-6 & Methods & 4 & 100.000000 \\
-7 & Methods & 4 & 97.826087 \\
-8 & Methods & 4 & 93.478261 \\
-9 & Methods & 4a & 76.086957 \\
-10 & Methods & 4a & 91.304348 \\
-11 & Methods & 4a & 80.434783 \\
-12 & Methods & 4a & 95.652174 \\
-13 & Methods & 4a & 78.260870 \\
-14 & Methods & 4a & 60.869565 \\
-15 & Methods & 4a & 84.782609 \\
-16 & Methods & 4b & 93.478261 \\
-17 & Methods & 4b & 91.304348 \\
-18 & Methods & 4b & 91.304348 \\
-19 & Methods & 4c & 69.565217 \\
-20 & Methods & 4c & 71.739130 \\
-21 & Methods & 4c & 100.000000 \\
-22 & Methods & 4d & 82.608696 \\
-23 & Methods & 4d & 91.304348 \\
-24 & Methods & 4d & 84.782609 \\
-25 & Methods & 4e & 80.434783 \\
-26 & Methods & 5 & 82.608696 \\
-27 & Methods & 5 & 86.956522 \\
-28 & Methods & 5 & 89.130435 \\
-29 & Methods & 5 & 89.130435 \\
-30 & Methods & 6a & 97.826087 \\
-31 & Methods & 6b & 71.739130 \\
-32 & Methods & 6c & 100.000000 \\
-33 & Methods & 6c & 97.826087 \\
-34 & Methods & 6c & 100.000000 \\
-35 & Methods & 6d & 91.304348 \\
-36 & Methods & 6e & 95.652174 \\
-37 & Methods & 7 & 91.304348 \\
-38 & Methods & 7 & 86.956522 \\
-39 & Methods & 7 & 97.826087 \\
-40 & Methods & 7 & 65.217391 \\
-41 & Methods & 8 & 100.000000 \\
-42 & Methods & 9a & 76.086957 \\
-43 & Methods & 9b & 97.826087 \\
-44 & Results & 10a & 76.086957 \\
-45 & Results & 10b & 82.608696 \\
-46 & Results & 10c & 71.739130 \\
-47 & Results & 10d & 60.869565 \\
-48 & Results & 10d & 97.826087 \\
-49 & Results & 11a & 78.260870 \\
-50 & Results & 11b & 97.826087 \\
-51 & Results & 11c & 95.652174 \\
-52 & Results & 11d & 91.304348 \\
-53 & Results & 12a & 93.478261 \\
-54 & Results & 12a & 82.608696 \\
-55 & Results & 12a & 95.652174 \\
-56 & Results & 12a & 63.043478 \\
-57 & Results & 12b & 89.130435 \\
-58 & Results & 13a & 100.000000 \\
-59 & Results & 13b & 100.000000 \\
-60 & Results & 13c & 73.913043 \\
-61 & Results & 13d & 65.217391 \\
-62 & Results & 13e & 76.086957 \\
-63 & Discussion & 14 & 100.000000 \\
-64 & Discussion & 15 & 93.478261 \\
-65 & Discussion & 15 & 100.000000 \\
-66 & Discussion & 15 & 82.608696 \\
-67 & Discussion & 16a & 100.000000 \\
-68 & Discussion & 16b & 100.000000 \\
-69 & Discussion & 16b & 91.304348 \\
-70 & Discussion & 16b & 91.304348 \\
-71 & Discussion & 16c & 100.000000 \\
-72 & Discussion & 17 & 97.826087 \\
-73 & Discussion & 17 & 89.130435 \\
-74 & Discussion & 17 & 84.782609 \\
-75 & Other Information & 18 & 93.478261 \\
-76 & Other Information & 18 & 100.000000 \\
-77 & Other Information & 18 & 97.826087 \\
-78 & Other Information & 19 & 93.478261 \\
-79 & Other Information & 19 & 97.826087 \\
-80 & Other Information & 20 & 89.130435 \\
+1 & Title and Abstract & 1 & 46 & 0 & 46 & 0 & 0 \\
+2 & Introduction & 2 & 46 & 0 & 46 & 0 & 0 \\
+3 & Introduction & 3 & 42 & 4 & 43 & 3 & 1 \\
+4 & Methods & 4 & 46 & 0 & 46 & 0 & 0 \\
+5 & Methods & 4 & 46 & 0 & 46 & 0 & 0 \\
+6 & Methods & 4 & 46 & 0 & 46 & 0 & 0 \\
+7 & Methods & 4 & 46 & 0 & 46 & 0 & 0 \\
+8 & Methods & 4 & 27 & 19 & 27 & 19 & 2 \\
+9 & Methods & 4a & 24 & 22 & 28 & 18 & 6 \\
+10 & Methods & 4a & 36 & 10 & 39 & 7 & 7 \\
+11 & Methods & 4a & 26 & 20 & 23 & 23 & 9 \\
+12 & Methods & 4a & 11 & 35 & 7 & 39 & 4 \\
+13 & Methods & 4a & 38 & 8 & 36 & 10 & 4 \\
+14 & Methods & 4a & 5 & 32 & 6 & 21 & 18 \\
+15 & Methods & 4a & 16 & 30 & 19 & 27 & 9 \\
+16 & Methods & 4b & 10 & 36 & 10 & 36 & 2 \\
+17 & Methods & 4b & 43 & 3 & 44 & 2 & 1 \\
+18 & Methods & 4b & 4 & 42 & 7 & 39 & 3 \\
+19 & Methods & 4c & 16 & 30 & 13 & 32 & 12 \\
+20 & Methods & 4c & 16 & 30 & 11 & 35 & 15 \\
+21 & Methods & 4c & 46 & 0 & 46 & 0 & 0 \\
+22 & Methods & 4d & 29 & 17 & 28 & 18 & 1 \\
+23 & Methods & 4d & 24 & 22 & 26 & 20 & 4 \\
+24 & Methods & 4d & 13 & 33 & 16 & 30 & 5 \\
+25 & Methods & 4e & 40 & 5 & 41 & 4 & 6 \\
+26 & Methods & 5 & 32 & 14 & 37 & 9 & 5 \\
+27 & Methods & 5 & 32 & 14 & 35 & 11 & 3 \\
+28 & Methods & 5 & 32 & 14 & 35 & 11 & 3 \\
+29 & Methods & 5 & 8 & 38 & 8 & 38 & 2 \\
+30 & Methods & 6a & 19 & 23 & 16 & 30 & 7 \\
+31 & Methods & 6b & 44 & 2 & 42 & 4 & 2 \\
+32 & Methods & 6c & 46 & 0 & 46 & 0 & 0 \\
+33 & Methods & 6c & 15 & 31 & 15 & 31 & 2 \\
+34 & Methods & 6c & 3 & 40 & 2 & 41 & 1 \\
+35 & Methods & 6d & 5 & 41 & 6 & 40 & 5 \\
+36 & Methods & 6e & 24 & 22 & 23 & 23 & 1 \\
+37 & Methods & 7 & 42 & 4 & 41 & 5 & 1 \\
+38 & Methods & 7 & 24 & 22 & 30 & 16 & 6 \\
+39 & Methods & 7 & 43 & 3 & 44 & 2 & 3 \\
+40 & Methods & 7 & 18 & 28 & 38 & 8 & 20 \\
+41 & Methods & 8 & 46 & 0 & 46 & 0 & 0 \\
+42 & Methods & 9a & 23 & 23 & 19 & 27 & 14 \\
+43 & Methods & 9b & 3 & 43 & 3 & 43 & 0 \\
+44 & Results & 10a & 14 & 31 & 16 & 29 & 2 \\
+45 & Results & 10b & 16 & 30 & 18 & 28 & 6 \\
+46 & Results & 10c & 4 & 17 & 5 & 31 & 16 \\
+47 & Results & 10d & 19 & 24 & 12 & 31 & 7 \\
+48 & Results & 10d & 6 & 37 & 6 & 37 & 0 \\
+49 & Results & 11a & 33 & 13 & 33 & 13 & 2 \\
+50 & Results & 11b & 45 & 1 & 46 & 0 & 1 \\
+51 & Results & 11c & 0 & 46 & 0 & 45 & 1 \\
+52 & Results & 11d & 45 & 1 & 46 & 0 & 1 \\
+53 & Results & 12a & 37 & 9 & 36 & 10 & 3 \\
+54 & Results & 12a & 24 & 22 & 32 & 14 & 8 \\
+55 & Results & 12a & 43 & 3 & 46 & 0 & 3 \\
+56 & Results & 12a & 16 & 30 & 26 & 20 & 10 \\
+57 & Results & 12b & 42 & 4 & 42 & 4 & 0 \\
+58 & Results & 13a & 45 & 1 & 46 & 0 & 1 \\
+59 & Results & 13b & 44 & 2 & 43 & 3 & 3 \\
+60 & Results & 13c & 17 & 28 & 17 & 27 & 1 \\
+61 & Results & 13d & 19 & 27 & 15 & 30 & 17 \\
+62 & Results & 13e & 35 & 11 & 30 & 16 & 7 \\
+63 & Discussion & 14 & 46 & 0 & 46 & 0 & 0 \\
+64 & Discussion & 15 & 37 & 9 & 40 & 6 & 3 \\
+65 & Discussion & 15 & 45 & 1 & 44 & 2 & 1 \\
+66 & Discussion & 15 & 30 & 16 & 36 & 10 & 6 \\
+67 & Discussion & 16a & 46 & 0 & 46 & 0 & 0 \\
+68 & Discussion & 16b & 46 & 0 & 46 & 0 & 0 \\
+69 & Discussion & 16b & 9 & 37 & 10 & 36 & 1 \\
+70 & Discussion & 16b & 40 & 6 & 42 & 4 & 2 \\
+71 & Discussion & 16c & 46 & 0 & 46 & 0 & 0 \\
+72 & Discussion & 17 & 41 & 5 & 41 & 5 & 0 \\
+73 & Discussion & 17 & 12 & 34 & 17 & 29 & 5 \\
+74 & Discussion & 17 & 8 & 38 & 10 & 36 & 2 \\
+75 & Other Information & 18 & 40 & 6 & 45 & 1 & 7 \\
+76 & Other Information & 18 & 7 & 38 & 7 & 34 & 5 \\
+77 & Other Information & 18 & 3 & 42 & 3 & 41 & 3 \\
+78 & Other Information & 19 & 44 & 2 & 45 & 1 & 3 \\
+79 & Other Information & 19 & 3 & 43 & 3 & 43 & 2 \\
+80 & Other Information & 20 & 38 & 8 & 45 & 1 & 7 \\
+
+\end{longtable}
+
+\begin{longtable}{rllr}
+\caption{Model accuracy by component}
+\label{tab:model:accuracy} \\
+
+\toprule
+Index & Section & Item & Accuracy, \% \\
+\midrule
+\endfirsthead
+
+\toprule
+Index & Section & Item & Accuracy, \% \\
+\midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+1 & Title and Abstract & 1 & 100.0 \\
+2 & Introduction & 2 & 100.0 \\
+3 & Introduction & 3 & 91.3 \\
+4 & Methods & 4 & 100.0 \\
+5 & Methods & 4 & 100.0 \\
+6 & Methods & 4 & 100.0 \\
+7 & Methods & 4 & 97.8 \\
+8 & Methods & 4 & 93.5 \\
+9 & Methods & 4a & 76.1 \\
+10 & Methods & 4a & 91.3 \\
+11 & Methods & 4a & 80.4 \\
+12 & Methods & 4a & 95.7 \\
+13 & Methods & 4a & 78.3 \\
+14 & Methods & 4a & 60.9 \\
+15 & Methods & 4a & 84.8 \\
+16 & Methods & 4b & 93.5 \\
+17 & Methods & 4b & 91.3 \\
+18 & Methods & 4b & 91.3 \\
+19 & Methods & 4c & 69.6 \\
+20 & Methods & 4c & 71.7 \\
+21 & Methods & 4c & 100.0 \\
+22 & Methods & 4d & 82.6 \\
+23 & Methods & 4d & 91.3 \\
+24 & Methods & 4d & 84.8 \\
+25 & Methods & 4e & 80.4 \\
+26 & Methods & 5 & 82.6 \\
+27 & Methods & 5 & 87.0 \\
+28 & Methods & 5 & 89.1 \\
+29 & Methods & 5 & 89.1 \\
+30 & Methods & 6a & 97.8 \\
+31 & Methods & 6b & 71.7 \\
+32 & Methods & 6c & 100.0 \\
+33 & Methods & 6c & 97.8 \\
+34 & Methods & 6c & 100.0 \\
+35 & Methods & 6d & 91.3 \\
+36 & Methods & 6e & 95.7 \\
+37 & Methods & 7 & 91.3 \\
+38 & Methods & 7 & 87.0 \\
+39 & Methods & 7 & 97.8 \\
+40 & Methods & 7 & 65.2 \\
+41 & Methods & 8 & 100.0 \\
+42 & Methods & 9a & 76.1 \\
+43 & Methods & 9b & 97.8 \\
+44 & Results & 10a & 76.1 \\
+45 & Results & 10b & 82.6 \\
+46 & Results & 10c & 71.7 \\
+47 & Results & 10d & 60.9 \\
+48 & Results & 10d & 97.8 \\
+49 & Results & 11a & 78.3 \\
+50 & Results & 11b & 97.8 \\
+51 & Results & 11c & 95.7 \\
+52 & Results & 11d & 91.3 \\
+53 & Results & 12a & 93.5 \\
+54 & Results & 12a & 82.6 \\
+55 & Results & 12a & 95.7 \\
+56 & Results & 12a & 63.0 \\
+57 & Results & 12b & 89.1 \\
+58 & Results & 13a & 100.0 \\
+59 & Results & 13b & 100.0 \\
+60 & Results & 13c & 73.9 \\
+61 & Results & 13d & 65.2 \\
+62 & Results & 13e & 76.1 \\
+63 & Discussion & 14 & 100.0 \\
+64 & Discussion & 15 & 93.5 \\
+65 & Discussion & 15 & 100.0 \\
+66 & Discussion & 15 & 82.6 \\
+67 & Discussion & 16a & 100.0 \\
+68 & Discussion & 16b & 100.0 \\
+69 & Discussion & 16b & 91.3 \\
+70 & Discussion & 16b & 91.3 \\
+71 & Discussion & 16c & 100.0 \\
+72 & Discussion & 17 & 97.8 \\
+73 & Discussion & 17 & 89.1 \\
+74 & Discussion & 17 & 84.8 \\
+75 & Other Information & 18 & 93.5 \\
+76 & Other Information & 18 & 100.0 \\
+77 & Other Information & 18 & 97.8 \\
+78 & Other Information & 19 & 93.5 \\
+79 & Other Information & 19 & 97.8 \\
+80 & Other Information & 20 & 89.1 \\
+
 \end{longtable}
 
 \begin{longtable}{lllllll}
@@ -258,97 +329,97 @@ Index & Section & Item & Accuracy,\% \\
 \label{tab:report:component} \\
 
 \toprule
-Index & Section & Item & Reported & Not Reported & Not Applicable & Reported,\% \\
+Index & Section & Item & Reported, n(\%) & Not Reported, n(\%) & Not Applicablen, n(\%) \\
 \midrule
 \endfirsthead
 
 \toprule
-Index & Section & Item & Reported & Not Reported & Not Applicable & Reported,\% \\
+Index & Section & Item & Reported, n(\%) & Not Reported, n(\%) & Not Applicable, n(\%) \\
 \midrule
 \endhead
 
 \bottomrule
 \endfoot
 
-1 & Title and Abstract & 1 & 12407 & 187 & 105 & 98.515166 \\
-2 & Introduction & 2 & 12318 & 336 & 45 & 97.344713 \\
-3 & Introduction & 3 & 11930 & 716 & 53 & 94.338131 \\
-4 & Methods & 4 & 12543 & 133 & 23 & 98.950773 \\
-5 & Methods & 4 & 12530 & 146 & 23 & 98.848217 \\
-6 & Methods & 4 & 12532 & 124 & 43 & 99.020228 \\
-7 & Methods & 4 & 12564 & 89 & 46 & 99.296609 \\
-8 & Methods & 4 & 7016 & 5644 & 39 & 55.418641 \\
-9 & Methods & 4a & 7917 & 4749 & 33 & 62.505921 \\
-10 & Methods & 4a & 10474 & 2189 & 36 & 82.713417 \\
-11 & Methods & 4a & 7823 & 4824 & 52 & 61.856567 \\
-12 & Methods & 4a & 1860 & 10790 & 49 & 14.703557 \\
-13 & Methods & 4a & 9393 & 3264 & 42 & 74.211899 \\
-14 & Methods & 4a & 1555 & 3326 & 7818 & 31.858226 \\
-15 & Methods & 4a & 7210 & 5460 & 29 & 56.906077 \\
-16 & Methods & 4b & 4121 & 8541 & 37 & 32.546201 \\
-17 & Methods & 4b & 11422 & 1256 & 21 & 90.093075 \\
-18 & Methods & 4b & 1617 & 11049 & 33 & 12.766461 \\
-19 & Methods & 4c & 5805 & 6803 & 91 & 46.042195 \\
-20 & Methods & 4c & 8160 & 4434 & 105 & 64.792758 \\
-21 & Methods & 4c & 11956 & 653 & 90 & 94.821159 \\
-22 & Methods & 4d & 7461 & 5187 & 51 & 58.989564 \\
-23 & Methods & 4d & 6699 & 5951 & 49 & 52.956522 \\
-24 & Methods & 4d & 5505 & 7106 & 88 & 43.652367 \\
-25 & Methods & 4e & 9537 & 3064 & 98 & 75.684469 \\
-26 & Methods & 5 & 9918 & 2660 & 121 & 78.851964 \\
-27 & Methods & 5 & 9279 & 3299 & 121 & 73.771665 \\
-28 & Methods & 5 & 9394 & 3184 & 121 & 74.685960 \\
-29 & Methods & 5 & 2008 & 10548 & 143 & 15.992354 \\
-30 & Methods & 6a & 5620 & 7045 & 34 & 44.374260 \\
-31 & Methods & 6b & 10289 & 2311 & 99 & 81.658730 \\
-32 & Methods & 6c & 12163 & 391 & 145 & 96.885455 \\
-33 & Methods & 6c & 4622 & 8031 & 46 & 36.528886 \\
-34 & Methods & 6c & 454 & 11309 & 936 & 3.859560 \\
-35 & Methods & 6d & 2023 & 10620 & 56 & 16.000949 \\
-36 & Methods & 6e & 6048 & 6545 & 106 & 48.026681 \\
-37 & Methods & 7 & 11040 & 1540 & 119 & 87.758347 \\
-38 & Methods & 7 & 7950 & 4630 & 119 & 63.195548 \\
-39 & Methods & 7 & 11736 & 844 & 119 & 93.290938 \\
-40 & Methods & 7 & 10182 & 2371 & 146 & 81.112085 \\
-41 & Methods & 8 & 12271 & 391 & 37 & 96.912020 \\
-42 & Methods & 9a & 7509 & 5172 & 18 & 59.214573 \\
-43 & Methods & 9b & 304 & 12377 & 18 & 2.397287 \\
-44 & Results & 10a & 5997 & 6666 & 36 & 47.358446 \\
-45 & Results & 10b & 4615 & 8046 & 38 & 36.450517 \\
-46 & Results & 10c & 1215 & 8104 & 3380 & 13.037880 \\
-47 & Results & 10d & 4169 & 7637 & 893 & 35.312553 \\
-48 & Results & 10d & 2083 & 9737 & 879 & 17.622673 \\
-49 & Results & 11a & 8403 & 4186 & 110 & 66.748749 \\
-50 & Results & 11b & 11607 & 938 & 154 & 92.522917 \\
-51 & Results & 11c & 269 & 11738 & 692 & 2.240360 \\
-52 & Results & 11d & 11626 & 1021 & 52 & 91.926939 \\
-53 & Results & 12a & 9093 & 3480 & 126 & 72.321642 \\
-54 & Results & 12a & 7080 & 5493 & 126 & 56.311143 \\
-55 & Results & 12a & 11250 & 1323 & 126 & 89.477452 \\
-56 & Results & 12a & 6963 & 5440 & 296 & 56.139644 \\
-57 & Results & 12b & 9670 & 2785 & 244 & 77.639502 \\
-58 & Results & 13a & 12052 & 585 & 62 & 95.370737 \\
-59 & Results & 13b & 11848 & 795 & 56 & 93.711935 \\
-60 & Results & 13c & 5903 & 4888 & 1908 & 54.702993 \\
-61 & Results & 13d & 8303 & 4233 & 163 & 66.233248 \\
-62 & Results & 13e & 7919 & 4473 & 307 & 63.904132 \\
-63 & Discussion & 14 & 12587 & 88 & 24 & 99.305720 \\
-64 & Discussion & 15 & 9251 & 3344 & 104 & 73.449782 \\
-65 & Discussion & 15 & 11969 & 712 & 18 & 94.385301 \\
-66 & Discussion & 15 & 9686 & 2995 & 18 & 76.381989 \\
-67 & Discussion & 16a & 12416 & 263 & 20 & 97.925704 \\
-68 & Discussion & 16b & 12387 & 259 & 53 & 97.951922 \\
-69 & Discussion & 16b & 1260 & 11320 & 119 & 10.015898 \\
-70 & Discussion & 16b & 10754 & 1839 & 106 & 85.396649 \\
-71 & Discussion & 16c & 12323 & 344 & 32 & 97.284282 \\
-72 & Discussion & 17 & 10872 & 1805 & 22 & 85.761616 \\
-73 & Discussion & 17 & 3314 & 9329 & 56 & 26.212133 \\
-74 & Discussion & 17 & 2534 & 10108 & 57 & 20.044297 \\
-75 & Other Information & 18 & 10586 & 2101 & 12 & 83.439741 \\
-76 & Other Information & 18 & 3087 & 9531 & 81 & 24.465050 \\
-77 & Other Information & 18 & 1802 & 10791 & 106 & 14.309537 \\
-78 & Other Information & 19 & 11719 & 965 & 15 & 92.391990 \\
-79 & Other Information & 19 & 1541 & 11145 & 13 & 12.147249 \\
-80 & Other Information & 20 & 10689 & 1998 & 12 & 84.251596 \\
+1 & Title and Abstract & 1 & 12407 (97.7\%) & 187 (1.5\%) & 105 (0.8\%) \\
+2 & Introduction & 2 & 12318 (97.0\%) & 336 (2.6\%) & 45 (0.4\%) \\
+3 & Introduction & 3 & 11930 (93.9\%) & 716 (5.6\%) & 53 (0.4\%) \\
+4 & Methods & 4 & 12543 (98.8\%) & 133 (1.0\%) & 23 (0.2\%) \\
+5 & Methods & 4 & 12530 (98.7\%) & 146 (1.1\%) & 23 (0.2\%) \\
+6 & Methods & 4 & 12532 (98.7\%) & 124 (1.0\%) & 43 (0.3\%) \\
+7 & Methods & 4 & 12564 (98.9\%) & 89 (0.7\%) & 46 (0.4\%) \\
+8 & Methods & 4 & 7016 (55.2\%) & 5644 (44.4\%) & 39 (0.3\%) \\
+9 & Methods & 4a & 7917 (62.3\%) & 4749 (37.4\%) & 33 (0.3\%) \\
+10 & Methods & 4a & 10474 (82.5\%) & 2189 (17.2\%) & 36 (0.3\%) \\
+11 & Methods & 4a & 7823 (61.6\%) & 4824 (38.0\%) & 52 (0.4\%) \\
+12 & Methods & 4a & 1860 (14.6\%) & 10790 (85.0\%) & 49 (0.4\%) \\
+13 & Methods & 4a & 9393 (74.0\%) & 3264 (25.7\%) & 42 (0.3\%) \\
+14 & Methods & 4a & 1555 (12.2\%) & 3326 (26.2\%) & 7818 (61.6\%) \\
+15 & Methods & 4a & 7210 (56.8\%) & 5460 (43.0\%) & 29 (0.2\%) \\
+16 & Methods & 4b & 4121 (32.5\%) & 8541 (67.3\%) & 37 (0.3\%) \\
+17 & Methods & 4b & 11422 (89.9\%) & 1256 (9.9\%) & 21 (0.2\%) \\
+18 & Methods & 4b & 1617 (12.7\%) & 11049 (87.0\%) & 33 (0.3\%) \\
+19 & Methods & 4c & 5805 (45.7\%) & 6803 (53.6\%) & 91 (0.7\%) \\
+20 & Methods & 4c & 8160 (64.3\%) & 4434 (34.9\%) & 105 (0.8\%) \\
+21 & Methods & 4c & 11956 (94.1\%) & 653 (5.1\%) & 90 (0.7\%) \\
+22 & Methods & 4d & 7461 (58.8\%) & 5187 (40.8\%) & 51 (0.4\%) \\
+23 & Methods & 4d & 6699 (52.8\%) & 5951 (46.9\%) & 49 (0.4\%) \\
+24 & Methods & 4d & 5505 (43.3\%) & 7106 (56.0\%) & 88 (0.7\%) \\
+25 & Methods & 4e & 9537 (75.1\%) & 3064 (24.1\%) & 98 (0.8\%) \\
+26 & Methods & 5 & 9918 (78.1\%) & 2660 (20.9\%) & 121 (1.0\%) \\
+27 & Methods & 5 & 9279 (73.1\%) & 3299 (26.0\%) & 121 (1.0\%) \\
+28 & Methods & 5 & 9394 (74.0\%) & 3184 (25.1\%) & 121 (1.0\%) \\
+29 & Methods & 5 & 2008 (15.8\%) & 10548 (83.1\%) & 143 (1.1\%) \\
+30 & Methods & 6a & 5620 (44.3\%) & 7045 (55.5\%) & 34 (0.3\%) \\
+31 & Methods & 6b & 10289 (81.0\%) & 2311 (18.2\%) & 99 (0.8\%) \\
+32 & Methods & 6c & 12163 (95.8\%) & 391 (3.1\%) & 145 (1.1\%) \\
+33 & Methods & 6c & 4622 (36.4\%) & 8031 (63.2\%) & 46 (0.4\%) \\
+34 & Methods & 6c & 454 (3.6\%) & 11309 (89.1\%) & 936 (7.4\%) \\
+35 & Methods & 6d & 2023 (15.9\%) & 10620 (83.6\%) & 56 (0.4\%) \\
+36 & Methods & 6e & 6048 (47.6\%) & 6545 (51.5\%) & 106 (0.8\%) \\
+37 & Methods & 7 & 11040 (86.9\%) & 1540 (12.1\%) & 119 (0.9\%) \\
+38 & Methods & 7 & 7950 (62.6\%) & 4630 (36.5\%) & 119 (0.9\%) \\
+39 & Methods & 7 & 11736 (92.4\%) & 844 (6.6\%) & 119 (0.9\%) \\
+40 & Methods & 7 & 10182 (80.2\%) & 2371 (18.7\%) & 146 (1.1\%) \\
+41 & Methods & 8 & 12271 (96.6\%) & 391 (3.1\%) & 37 (0.3\%) \\
+42 & Methods & 9a & 7509 (59.1\%) & 5172 (40.7\%) & 18 (0.1\%) \\
+43 & Methods & 9b & 304 (2.4\%) & 12377 (97.5\%) & 18 (0.1\%) \\
+44 & Results & 10a & 5997 (47.2\%) & 6666 (52.5\%) & 36 (0.3\%) \\
+45 & Results & 10b & 4615 (36.3\%) & 8046 (63.4\%) & 38 (0.3\%) \\
+46 & Results & 10c & 1215 (9.6\%) & 8104 (63.8\%) & 3380 (26.6\%) \\
+47 & Results & 10d & 4169 (32.8\%) & 7637 (60.1\%) & 893 (7.0\%) \\
+48 & Results & 10d & 2083 (16.4\%) & 9737 (76.7\%) & 879 (6.9\%) \\
+49 & Results & 11a & 8403 (66.2\%) & 4186 (33.0\%) & 110 (0.9\%) \\
+50 & Results & 11b & 11607 (91.4\%) & 938 (7.4\%) & 154 (1.2\%) \\
+51 & Results & 11c & 269 (2.1\%) & 11738 (92.4\%) & 692 (5.4\%) \\
+52 & Results & 11d & 11626 (91.6\%) & 1021 (8.0\%) & 52 (0.4\%) \\
+53 & Results & 12a & 9093 (71.6\%) & 3480 (27.4\%) & 126 (1.0\%) \\
+54 & Results & 12a & 7080 (55.8\%) & 5493 (43.3\%) & 126 (1.0\%) \\
+55 & Results & 12a & 11250 (88.6\%) & 1323 (10.4\%) & 126 (1.0\%) \\
+56 & Results & 12a & 6963 (54.8\%) & 5440 (42.8\%) & 296 (2.3\%) \\
+57 & Results & 12b & 9670 (76.1\%) & 2785 (21.9\%) & 244 (1.9\%) \\
+58 & Results & 13a & 12052 (94.9\%) & 585 (4.6\%) & 62 (0.5\%) \\
+59 & Results & 13b & 11848 (93.3\%) & 795 (6.3\%) & 56 (0.4\%) \\
+60 & Results & 13c & 5903 (46.5\%) & 4888 (38.5\%) & 1908 (15.0\%) \\
+61 & Results & 13d & 8303 (65.4\%) & 4233 (33.3\%) & 163 (1.3\%) \\
+62 & Results & 13e & 7919 (62.4\%) & 4473 (35.2\%) & 307 (2.4\%) \\
+63 & Discussion & 14 & 12587 (99.1\%) & 88 (0.7\%) & 24 (0.2\%) \\
+64 & Discussion & 15 & 9251 (72.8\%) & 3344 (26.3\%) & 104 (0.8\%) \\
+65 & Discussion & 15 & 11969 (94.3\%) & 712 (5.6\%) & 18 (0.1\%) \\
+66 & Discussion & 15 & 9686 (76.3\%) & 2995 (23.6\%) & 18 (0.1\%) \\
+67 & Discussion & 16a & 12416 (97.8\%) & 263 (2.1\%) & 20 (0.2\%) \\
+68 & Discussion & 16b & 12387 (97.5\%) & 259 (2.0\%) & 53 (0.4\%) \\
+69 & Discussion & 16b & 1260 (9.9\%) & 11320 (89.1\%) & 119 (0.9\%) \\
+70 & Discussion & 16b & 10754 (84.7\%) & 1839 (14.5\%) & 106 (0.8\%) \\
+71 & Discussion & 16c & 12323 (97.0\%) & 344 (2.7\%) & 32 (0.3\%) \\
+72 & Discussion & 17 & 10872 (85.6\%) & 1805 (14.2\%) & 22 (0.2\%) \\
+73 & Discussion & 17 & 3314 (26.1\%) & 9329 (73.5\%) & 56 (0.4\%) \\
+74 & Discussion & 17 & 2534 (20.0\%) & 10108 (79.6\%) & 57 (0.4\%) \\
+75 & Other Information & 18 & 10586 (83.4\%) & 2101 (16.5\%) & 12 (0.1\%) \\
+76 & Other Information & 18 & 3087 (24.3\%) & 9531 (75.1\%) & 81 (0.6\%) \\
+77 & Other Information & 18 & 1802 (14.2\%) & 10791 (85.0\%) & 106 (0.8\%) \\
+78 & Other Information & 19 & 11719 (92.3\%) & 965 (7.6\%) & 15 (0.1\%) \\
+79 & Other Information & 19 & 1541 (12.1\%) & 11145 (87.8\%) & 13 (0.1\%) \\
+80 & Other Information & 20 & 10689 (84.2\%) & 1998 (15.7\%) & 12 (0.1\%) \\
 
 \end{longtable}

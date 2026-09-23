@@ -1,6 +1,10 @@
 % Supplementary tables
 
-\begin{longtable}{lllp{10cm}}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\setlength{\tabcolsep}{4pt}
+\small
+\begin{longtable}{@{}lll p{9cm}@{}}
 \caption{Definitions of STROBE-MR components}
 \label{tab:def:component} \\
 
@@ -32,7 +36,7 @@ Index & Section & Item & Component \\
 13 & Methods & 4a & [Setting] For each data source, describe its exposure \\
 14 & Methods & 4a & [Setting] For each data source, describe how the follow-up process was conducted  \\
 15 & Methods & 4a & [Setting] For each data source, describe the data collection process \\
-16 & Methods & 4b & [Paricipants] For each data source, give the eligibility criteria, and the sources and methods of selection of participants \\
+16 & Methods & 4b & [Participants] For each data source, give the eligibility criteria, and the sources and methods of selection of participants \\
 17 & Methods & 4b & [Participants] For each data source, report the sample size \\
 18 & Methods & 4b & [Participants] For each data source, report whether any power or sample size calculations were carried out prior to the main analysis \\
 19 & Methods & 4c & [Participants] For each data source, describe measurement of genetic variants \\
@@ -124,17 +128,17 @@ class Assessment(BaseModel):
 
 \input{assets/tables/tab_json_obj.tex}
 
-\begin{longtable}{rllllllll}
+\begin{longtable}{@{}rlllllll@{}}
 \caption{Annotation summary by component}
 \label{tab:eval:component} \\
 
 \toprule
-Index & Section & Item & Reported(JZ) & Not Reported(JZ) & Reported(XW) & Not Reported(XW) & Disagreement \\
+Index & Section & Item & Yes(JZ) & No(JZ) & Yes(XW) & No(XW) & Disagreement \\
 \midrule
 \endfirsthead
 
 \toprule
-Index & Section & Item & Reported(JZ) & Not Reported(JZ) & Reported(XW) & Not Reported(XW) & Disagreement \\
+Index & Section & Item & Yes(JZ) & No(JZ) & Yes(XW) & No(XW) & Disagreement \\
 \midrule
 \endhead
 
@@ -324,12 +328,12 @@ Index & Section & Item & Accuracy, \% \\
 
 \end{longtable}
 
-\begin{longtable}{lllllll}
+\begin{longtable}{@{}rllrrr@{}}
 \caption{STROBE-MR reporting by component}
 \label{tab:report:component} \\
 
 \toprule
-Index & Section & Item & Reported, n(\%) & Not Reported, n(\%) & Not Applicablen, n(\%) \\
+Index & Section & Item & Reported, n(\%) & Not Reported, n(\%) & Not Applicable, n(\%) \\
 \midrule
 \endfirsthead
 

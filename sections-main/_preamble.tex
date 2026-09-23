@@ -2,9 +2,16 @@
 % disable 'A Preprint' label
 \renewcommand{\headeright}{}
 \renewcommand{\undertitle}{}
+\raggedbottom
+\AtBeginDocument{%
+  \setlength{\headheight}{23pt}%
+  \setlength{\headsep}{25pt}%
+  \newgeometry{top=1in,headheight=23pt,headsep=25pt,footskip=30pt}%
+  \renewcommand{\scshape}{\normalfont}%
+}
 \usepackage{fontspec}
 % Use Source Sans Pro sans-serif font throughout
-\usepackage[default]{sourcesanspro}
+\usepackage[default]{sourcesans}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{caption}

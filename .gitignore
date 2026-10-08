@@ -19,6 +19,9 @@
 # Top level generated PDFs
 /*.pdf
 
+# Supplementary build output
+/output-subdoc/
+
 # Temporary files
 *~
 .DS_Store
